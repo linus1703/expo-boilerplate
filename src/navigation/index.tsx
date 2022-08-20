@@ -23,7 +23,7 @@ import {
   SignedInParamList,
   RootTabScreenProps,
   SignedOutStackParamList,
-} from "../types";
+} from "../../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 
 //Screens

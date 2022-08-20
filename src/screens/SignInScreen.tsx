@@ -1,11 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import { Platform, StyleSheet, Text, View } from "react-native";
-import { RootStackScreenProps } from "../types";
+import { RootStackScreenProps } from "../../types";
 
-export default function SignUpScreen({
+export default function SignInScreen({
   navigation,
   route,
-}: RootStackScreenProps<"SignUp">) {
+}: RootStackScreenProps<"SignIn">) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Modal</Text>
