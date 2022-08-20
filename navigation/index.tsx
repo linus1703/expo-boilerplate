@@ -26,7 +26,7 @@ import {
   RootStackParamList,
   SignedInParamList,
   RootTabScreenProps,
-  SignedOutParamList,
+  SignedOutStackParamList,
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 
@@ -56,7 +56,7 @@ function RootNavigator() {
     <Stack.Navigator>
       <Stack.Screen
         name="SignedOutState"
-        component={SignedOutStateNavigator}
+        component={SignedOutStackNavigator}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -80,35 +80,16 @@ function RootNavigator() {
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
  * https://reactnavigation.org/docs/bottom-tab-navigator
  */
-const SignedOutState = createBottomTabNavigator<SignedOutParamList>();
+const SignedOutStack = createNativeStackNavigator<SignedOutStackParamList>();
 
-function SignedOutStateNavigator() {
+function SignedOutStackNavigator() {
   const colorScheme = useColorScheme();
 
   return (
-    <SignedOutState.Navigator
-      initialRouteName="SignIn"
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
-      }}
-    >
-      <SignedOutState.Screen
-        name="SignIn"
-        component={SignInScreen}
-        options={{
-          title: "Tab Two",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
-      <SignedOutState.Screen
-        name="SignUp"
-        component={SignUpScreen}
-        options={{
-          title: "Tab Two",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-        }}
-      />
-    </SignedOutState.Navigator>
+    <SignedOutStack.Navigator initialRouteName="SignIn">
+      <SignedOutStack.Screen name="SignIn" component={SignInScreen} />
+      <SignedOutStack.Screen name="SignUp" component={SignUpScreen} />
+    </SignedOutStack.Navigator>
   );
 }
 

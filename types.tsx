@@ -17,21 +17,21 @@ declare global {
 }
 
 export type RootStackParamList = {
-  SignedOutState: NavigatorScreenParams<SignedOutParamList> | undefined;
+  SignedOutState: NavigatorScreenParams<SignedOutStackParamList> | undefined;
   SignedInState: NavigatorScreenParams<SignedInParamList> | undefined;
   Modal: undefined;
   NotFound: undefined;
 };
 
-export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
-  NativeStackScreenProps<RootStackParamList, Screen>;
+export type RootStackScreenProps<Screen extends keyof SignedOutStackParamList> =
+  NativeStackScreenProps<SignedOutStackParamList, Screen>;
 
 export type SignedInParamList = {
   TabOne: undefined;
   TabTwo: undefined;
 };
 
-export type SignedOutParamList = {
+export type SignedOutStackParamList = {
   SignIn: undefined;
   SignUp: undefined;
 };
