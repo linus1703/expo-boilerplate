@@ -27,8 +27,7 @@ export type RootStackScreenProps<Screen extends keyof SignedOutStackParamList> =
   NativeStackScreenProps<SignedOutStackParamList, Screen>;
 
 export type SignedInParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Home: undefined;
 };
 
 export type SignedOutStackParamList = {

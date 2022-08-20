@@ -18,10 +18,6 @@ import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
-import SignInScreen from "../screens/SignInScreen";
-import SignUpScreen from "../screens/SignUpScreen";
-import TabOneScreen from "../screens/TabOneScreen";
-import TabTwoScreen from "../screens/TabTwoScreen";
 import {
   RootStackParamList,
   SignedInParamList,
@@ -29,6 +25,11 @@ import {
   SignedOutStackParamList,
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
+
+//Screens
+import SignInScreen from "../screens/SignInScreen";
+import SignUpScreen from "../screens/SignUpScreen";
+import HomeScreen from "../screens/HomeScreen";
 
 export default function Navigation({
   colorScheme,
@@ -104,14 +105,14 @@ function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabTwo"
+      initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}
     >
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
+        name="Home"
+        component={HomeScreen}
         options={{
           title: "Tab Two",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
