@@ -19,6 +19,7 @@ import useColorScheme from "../hooks/useColorScheme";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import SignInScreen from "../screens/SignInScreen";
+import SignUpScreen from "../screens/SignUpScreen";
 import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import {
@@ -93,7 +94,15 @@ function SignedOutStateNavigator() {
     >
       <SignedOutState.Screen
         name="SignIn"
-        component={TabTwoScreen}
+        component={SignInScreen}
+        options={{
+          title: "Tab Two",
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        }}
+      />
+      <SignedOutState.Screen
+        name="SignUp"
+        component={SignUpScreen}
         options={{
           title: "Tab Two",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,

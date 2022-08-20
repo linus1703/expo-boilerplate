@@ -33,6 +33,7 @@ export type SignedInParamList = {
 
 export type SignedOutParamList = {
   SignIn: undefined;
+  SignUp: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof SignedInParamList> =
